@@ -1,0 +1,122 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.overlay {
+  background-color: $white;
+  @include tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(228, 41%, 12%, 0.5);
+  }
+}
+.warehouse__card {
+  z-index: 100;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2rem;
+  @include tablet {
+    height: 22vh;
+    border-radius: 0;
+    max-width: 42rem;
+    padding: 0.5rem 2rem 2rem 0.2rem;
+  }
+  @include desktop {
+    max-width: 42rem;
+  }
+
+  &-info {
+    text-align: left;
+    @include flex(center, flex-start, column);
+  }
+  &-title {
+    @include mobile-header;
+    margin-top: 1.5rem;
+    @include tablet {
+      @include page-header;
+      margin-left: 3rem;
+      margin-right: 7rem;
+    }
+  }
+  &-text {
+    margin-top: 1rem;
+    @include mobile-body-large;
+    @include tablet {
+      @include body-large;
+      margin-left: 3rem;
+      margin-right: 7rem;
+    }
+  }
+  &-close {
+    position: absolute;
+    top: 8rem;
+    right: 4vw;
+    &:hover {
+      cursor: pointer;
+      background-color: $red;
+    }
+    @include tablet {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+  &-buttons {
+    width: 100%;
+    @include flex(space-between, center, row);
+    @include tablet {
+      width: 30%;
+      margin-left: auto;
+    }
+  }
+  &-cancel {
+    border-radius: 1.25rem;
+    background-color: $white;
+    border: 1px solid $cloud;
+    height: 2.2rem;
+    width: 48%;
+    &:hover {
+      cursor: pointer;
+      border-color: $indigo;
+    }
+    &--text{
+      &:hover {
+        color: $indigo;
+      }
+    }
+  }
+  &-delete {
+    border: none;
+    border-radius: 1.25rem;
+    background-color: $red;
+    color: $white;
+    height: 2.2rem;
+    width: 48%;
+    &:hover {
+      cursor: pointer;
+      background-color: $black;
+    }
+  }
+}
+.warehouse__button {
+  border: none;
+  background-color: $white;
+    &:hover {
+    background-color: $lightGrey;
+  }
+  &-delete {
+    cursor: pointer;
+  }
+}

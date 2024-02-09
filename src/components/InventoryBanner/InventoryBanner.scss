@@ -1,0 +1,149 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/colors' as *;
+
+.inventory {
+  &__banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    @include tablet{
+        height: 9rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 3rem;
+    border-radius: 5px 5px 0 0;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    @include tablet{
+        width: auto;
+    }
+  }
+  &__title{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  &__banner-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    @include tablet{
+        width: 50vw;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+    }
+  }
+  &__search{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 88vw;
+    max-width: 30rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    @include tablet{
+      width: 20rem;
+      height: 3rem;
+      padding: 0;
+      margin-top: 3rem;
+    }
+  }
+ 
+  &__search-input{
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    border: 1px solid $cloud;
+    border-radius: 2rem;
+    flex: 1;
+    padding: 0.5rem;
+    background-image: url("../../assets/icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 2rem 2rem;
+    @include tablet{
+      
+    }
+    &::placeholder{
+        font-size: 1rem;
+        font-weight: 400;
+        color: $slate;
+        
+        @include tablet{
+          font-size: 1.2rem;
+        }
+    }
+  }
+  &__add-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 0 1rem;
+    margin: 2rem 0;
+    @include tablet{
+        width: 14rem;
+        padding-top: 3.5rem;
+        margin-right: 2rem;
+    }
+  }
+  &__add-link{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 33rem;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    @include tablet{
+        width: 22vw;
+        height: 2.75rem;
+    }
+  }
+
+  &__add-button{
+    width: 100%;
+    height: 100%;
+    background-color: $indigo;
+    color: $white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    &:hover {
+      background-color: $black;
+    }
+    @include tablet{
+      width: 12rem;
+      height: 3rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+}

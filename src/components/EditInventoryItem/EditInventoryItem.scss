@@ -1,0 +1,359 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+
+.edit-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  top: -4.688rem;
+  margin: 1rem;
+  width: auto;
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+
+  @include tablet {
+    margin: 1rem 2rem;
+    top: -7.5rem;
+  }
+  @include desktop {
+    top: -6.875rem;
+    margin: 1rem 8rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem 1.1rem 1rem;
+    border-bottom: solid 1px $cloud;
+
+    @include tablet {
+      padding: 1.7rem 2rem 1.7rem 2rem;
+    }
+
+    @include desktop {
+      padding: 1.8rem 2.5rem 1rem 2.5rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__arrow-button {
+    border: none;
+    background: none;
+    padding: 0.5rem 0 0.1rem 0;
+    cursor: pointer;
+
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__arrow {
+    width: 85%;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    padding-left: 0.4rem;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+  }
+
+  &__form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form-container {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.2rem 0.5rem 1.2rem;
+    border-bottom: solid 1px $cloud;
+
+    @include tablet {
+      border: none;
+      width: 50%;
+      padding: 1.35rem 2rem 0.5rem 2rem;
+    }
+
+    @include desktop {
+      padding: 1.35rem 2.5rem 0 2.5rem;
+    }
+  }
+
+  &__form-title {
+    font-size: 1.05rem;
+    padding-bottom: 1.35rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  &__label {
+    @include mobile-body-small;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+
+    @include tablet {
+      font-size: 0.85rem;
+      padding-bottom: 0.5rem;
+    }
+
+    @include desktop {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__input {
+    border: solid 1px $cloud;
+    border-radius: 20px;
+    margin-bottom: 4vw;
+    height: 2rem;
+    color: $black;
+    font-size: 0.75rem;
+    padding: 0 0.8rem;
+
+    @include tablet {
+      height: 2.4rem;
+      font-size: 0.9rem;
+      padding: 0 0.85rem;
+      margin-bottom: 3.4vw;
+    }
+
+    @include desktop {
+      padding: 0 0.95rem;
+      margin-bottom: 2vw;
+    }
+  }
+
+  &__textarea {
+    border: solid 1px $cloud;
+    border-radius: 20px;
+    margin-bottom: 4vw;
+    height: 6.5rem;
+    resize: none;
+    overflow: hidden;
+    color: $black;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem 0 0.8rem;
+
+    @include tablet {
+      margin-bottom: 3.4vw;
+      height: 7.5rem;
+      font-size: 0.88rem;
+      padding: 0.4rem 0.85rem 0 0.85rem;
+    }
+
+    @include desktop {
+      padding: 0.4rem 0.95rem 0 0.95rem;
+      margin-bottom: 2.1vw;
+    }
+  }
+
+  &__category,
+  &__drop-down {
+    border: solid 1px $cloud;
+    border-radius: 20px;
+    margin-bottom: 4vw;
+    padding: 0 2rem 0 0.8rem;
+    color: $black;
+    font-size: 0.75rem;
+    appearance: none;
+    background: url("../../assets/icons/arrow_drop_down-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 2.8125rem 1.25rem;
+    height: 2rem;
+
+    @include tablet {
+      height: 2.3rem;
+      font-size: 0.9rem;
+      padding: 0 2.5rem 0 0.85rem;
+      background-size: 3.5rem 1.5rem;
+    }
+
+    @include desktop {
+      padding: 0 2.6rem 0 0.95rem;
+      background-size: 3.6rem 1.5rem;
+      margin-bottom: 2.5vw;
+    }
+  }
+
+  &__availability {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.2rem 0.5rem 1.2rem;
+
+    @include tablet {
+      width: 50%;
+      margin: 1.35rem 0 2rem 0;
+      padding: 0 2rem 0 2rem;
+      border-left: solid 1px $cloud;
+    }
+
+    @include desktop {
+      margin: 1.35rem 0 1.5rem 0;
+      padding: 0 2.5rem 1rem 2.5rem;
+    }
+  }
+
+  &__status {
+    padding: 0;
+  }
+
+  &__choices-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5rem;
+    padding: 0.3rem 0 0.85rem 0;
+
+    @include tablet {
+      padding: 0.4rem 0 1.75rem 0;
+      margin-right: 5rem;
+    }
+
+    @include desktop {
+      padding: 0.4rem 0 1.7rem 0;
+      margin-right: 13.8rem;
+    }
+  }
+
+  &__choice {
+    display: flex;
+  }
+
+  &__stock {
+    font-size: 0.7rem;
+    padding-left: 0.4rem;
+    color: $slate;
+
+    @include tablet {
+      font-size: 0.9rem;
+      padding-left: 0.5rem;
+    }
+
+    @include desktop {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__stock--selected {
+    color: $black;
+  }
+
+  &__qty-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__qty-container--selected {
+    display: none;
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    margin-top: 0;
+    background-color: $lightGrey;
+
+    @include tablet {
+      width: 100%;
+      justify-content: flex-end;
+      padding: 0.6rem 2rem 0.8rem 1.2rem;
+    }
+
+    @include desktop {
+      padding: 1.1rem 2.5rem 0.8rem 1.2rem;
+    }
+  }
+
+  &__button {
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: $indigo;
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    @include tablet {
+      width: 9.5%;
+      height: 2.4rem;
+      margin-right: 0;
+    }
+
+    @include desktop {
+      width: 6.5%;
+    }
+
+    &:hover {
+      background-color: $black;
+    }
+  }
+  &__button--cancel {
+    background-color: $white;
+    border: 1px solid $cloud;
+    color: $slate;
+    margin-right: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      width: 11%;
+    }
+
+    @include desktop {
+      width: 7.5%;
+    }
+
+    &:hover {
+      border-color: $indigo;
+      color: $indigo;
+      background-color: $white;
+    }
+  }
+
+  &__error {
+    display: flex;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 1.2rem;
+    }
+
+    @include desktop {
+      margin-bottom: 1.3rem;
+    }
+  }
+}

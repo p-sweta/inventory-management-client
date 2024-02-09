@@ -1,0 +1,59 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/global' as *;
+
+.sort-bar-container {
+  display: none;
+  @include tablet {
+    display: flex;
+    justify-content: flex-start;
+    width: 88vw;
+    height: 3rem;
+    background: rgba(247, 248, 249, 0.7);
+  }
+}
+
+.label {
+  &__inventory {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    width: 17%;
+    margin-left: 2rem;
+  }
+  &__category {
+    display: flex;
+    align-items: center;
+    width: 20%
+    
+  }
+  &__status {
+    display: flex;
+    align-items: center;
+    width: 18%;
+  }
+  &__quantity {
+    display: flex;
+    align-items: center;
+    width: 15%;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    width: 10%;
+  }
+  &__warehouse {
+    display: flex;
+    align-items: center;
+    width: 18%;
+  }
+  
+}
+
+// .sort-icon-container {
+//   display: flex;
+//   justify-content: flex-start;
+//   width: 5rem;
+//   height: 2rem;
+//   margin-right: 3vw;
+// }

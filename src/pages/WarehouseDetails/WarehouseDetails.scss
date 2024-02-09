@@ -1,0 +1,127 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+
+.details{
+    box-shadow: 0px 0px 5px 0px $cloud;
+    text-align: left;
+    background-color: $white;
+    position: relative;
+    top: -4.6875rem;
+    margin: 1rem;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid $cloud;
+    @include tablet{
+        border-bottom: 0;
+        top:-7.5rem;
+    }
+    @include desktop {
+        top: -7rem;
+        margin: 1rem 7rem;
+    }
+    &__warehouse{
+        padding: 2rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet{
+            padding: 1.75rem 2rem;
+        }
+        @include desktop{
+            padding: 2rem 2rem 1rem;
+        }
+    }
+    &__title{
+        @include mobile-header;
+    }
+    &__subtitle{
+        @include mobile-table;
+        @include tablet{
+            margin-bottom: 1rem;
+        }
+        @include desktop{
+            @include table-header;
+        }
+    }
+    &__body{
+        @include mobile-table;
+         @include desktop{
+            @include body-large;
+        }
+
+    }
+    &__link{
+        text-decoration: none;
+    }
+    &__pen{
+        height: 1.5rem;
+        width: 1.5rem;
+        padding-top: .3rem;
+    }
+    &__edit{
+        @include mobile{
+            display: none;
+        }
+        @include tablet{
+            display: unset;
+            color: $white;
+            font-weight: 600;
+        }
+    }
+    &__edit-container{
+        background-color: $indigo;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3.125rem;
+        @include tablet{
+            width: 5rem;
+            gap: .25rem;
+        }
+        &:hover{
+            background-color: $black;
+        }
+    }
+    &__header{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    &__divider{
+        border-top: 1px solid $cloud;
+    }
+    &__break{
+        @include tablet{
+            display: block;
+        }
+    }
+    &__info{
+        padding: 1rem;
+        color: $slate;
+        @include tablet{
+            display: flex;
+            padding: 1rem 2rem;
+        }
+    }
+    &__address{
+        margin-bottom: 2rem;
+        @include tablet{
+            width: 40%;
+            margin-bottom: 0;
+        }
+    }
+    &__info-flex{
+        display: flex;
+        gap: 2rem;
+        @include tablet{
+            border-left: 1px solid $cloud;
+            padding-left: 2rem;
+        }
+        @include desktop{
+            gap: 6rem;
+        }
+    }
+}

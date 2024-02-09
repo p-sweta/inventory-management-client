@@ -1,0 +1,273 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.add-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  top: -4.688rem;
+  margin: 1rem;
+  width: auto;
+  background-color: $white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  @include tablet {
+    margin: 1rem 2rem;
+    top: -7.5rem;
+  }
+  @include desktop {
+    top: -6.875rem;
+    margin: 1rem 8rem;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem 1.1rem 1rem;
+    border-bottom: solid 1px $cloud;
+    @include tablet {
+      padding: 1.7rem 2rem 1.7rem 2rem;
+    }
+    @include desktop {
+      padding: 1.8rem 2.5rem 1rem 2.5rem;
+    }
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__arrow-button {
+    border: none;
+    background: none;
+    padding: 0.5rem 0 0.1rem 0;
+    @include tablet {
+      padding-bottom: 0.5rem;
+      margin-right: 1vw;
+    }
+  }
+  &__arrow {
+    width: 85%;
+    @include tablet {
+      width: 97%;
+    }
+    @include desktop {
+      width: 100%;
+    }
+  }
+  &__title {
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 0.4rem;
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include desktop{
+        @include page-header
+    }
+  }
+  &__form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  &__flex{
+    @include tablet{
+        display: flex;
+        width: 100%;
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.2rem 0.5rem 1.2rem;
+    border-bottom: solid 1px $cloud;
+    @include tablet{
+        width: 100%;
+        border-bottom: none;
+        margin: 1rem 0;
+    }
+     @include desktop{
+        padding: 0.7rem 2.5rem;
+    }
+  }
+  &__form-title {
+    font-size: 1.05rem;
+    @include desktop{
+        @include sub-header;
+    }
+  }
+  &__label {
+    @include mobile-body-small;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+    margin-top: 4vw;
+    @include tablet {
+        @include body-small;
+        font-weight: 600;
+    }
+    @include desktop{
+        @include body-large;
+    }
+  }
+  &__input {
+    border: solid 1px $cloud;
+    border-radius: 20px;
+    height: 2rem;
+    padding-left: 0.8rem;
+    &::placeholder {
+        color: $slate;
+        font-size: 0.75rem;
+    }
+    &:focus{
+        outline-color: $indigo;
+    }
+  }
+  &__textarea {
+    padding: 0.4rem 0.8rem 0 0.8rem;
+    border: solid 1px $cloud;
+    border-radius: 20px;
+    height: 6.5rem;
+    resize: none;
+    overflow: hidden;
+    &::placeholder {
+        color: $slate;
+        font-size: 0.75rem;
+    }
+    &:focus{
+        outline-color: $indigo;
+    }
+  }
+  &__error-icon{
+    height: .8125rem;
+    width: .8125rem;
+  }
+  &__error-message{
+    @include body-small;
+    display: flex;
+    align-items: center;
+    color: $red;
+  }
+  &__category, &__drop-down {
+    border: solid 1px $cloud;
+    border-radius: 20px;
+    padding: 0 2rem 0 0.8rem;
+    color: $slate;
+    font-size: 0.75rem;
+    appearance: none;
+    background: url('../../assets/icons/arrow_drop_down-24px.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 2.8125rem 1.25rem;
+    height: 2rem;
+    &:focus{
+        outline-color: $indigo;
+    }
+  }
+  &__availability {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.2rem 0.5rem 1.2rem;
+    @include tablet{
+        width: 100%;
+        border-left: $cloud 1px solid;
+        margin: 1rem 0;
+    }
+    @include desktop{
+        padding: 0.7rem 2.5rem;
+    }
+  }
+  &__status {
+    padding: 0;
+  }
+
+  &__choices-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 2.5rem;
+    padding: 0.3rem 0 0.85rem 0;
+    @include desktop{
+        @include body-large;
+        justify-content: flex-start;
+        gap: 2rem;
+   }
+  }
+  &__choice {
+    display: flex;
+  }
+  &__stock {
+    font-size: 0.7rem;
+    padding-left: 0.4rem;
+    @include desktop{
+        @include body-medium;
+    }
+  }
+  &__qty-container {
+    display: flex;
+    flex-direction: column;
+  }
+   &__error{
+    border: 1px solid $red;
+  }
+  &__display{
+    display: none;
+  }
+  &__buttons-container{
+    display: flex;
+    justify-content: space-between;
+    // width: 100%;
+    padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+    margin-top: 0;
+    background-color: $lightGrey;
+    @include tablet{
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+&__button{
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: $indigo;
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    @include tablet{
+        max-width: 8rem;
+        width: 10vw;
+        height: 3rem;
+    }
+    &:hover{
+        background-color: $black;
+    }
+    @include tablet{
+        height: 2rem;
+    }
+
+}
+&__button--cancel{
+    background-color: $white;
+    border: 1px solid $cloud;
+    color: $slate;
+    // padding: 0 3.5rem;
+    margin-right: 1rem;
+    width: 100%;
+    // text-align: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    
+    &:hover{
+        border-color: $indigo;
+        color: $indigo;
+        background-color: $white;
+    }
+}
+// &__button--add{
+//   width: 48%;
+// }
+}

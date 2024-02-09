@@ -1,0 +1,110 @@
+@use '../partials/variables' as *;
+
+@mixin flex ($justify-content, $align-items, $flex-direction) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin mobile {
+    @media (min-width: 20rem) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 48rem) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 80rem) {
+        @content;
+    }
+}
+
+// for DESKTOP/TABLET text styles
+@mixin page-header {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+}
+@mixin sub-header {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+@mixin labels {
+    font-size: .875rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+}
+
+@mixin table-header {
+    font-size: .75rem;
+    line-height: 1.375rem;
+    font-weight: 600;
+}
+@mixin body-large{
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+}
+
+@mixin body-medium {
+    font-size: .875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+}
+@mixin body-small {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+
+//for MOBILE text styles
+
+@mixin mobile-header {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+}
+
+@mixin mobile-subheader {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+}
+
+@mixin mobile-labels {
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+}
+
+@mixin mobile-table {
+    font-size: .6875rem;
+    line-height: 1rem;
+    font-weight: 400;
+}
+
+@mixin mobile-body-large {
+    font-size: .9375rem;
+    line-height: 1.625rem;
+    font-weight: 400;
+}
+
+@mixin mobile-body-medium {
+    font-size: .8125rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+@mixin mobile-body-small {
+    font-size: .6875rem;
+    line-height: 1rem;
+    font-weight: 400;
+}

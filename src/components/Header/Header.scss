@@ -1,0 +1,70 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors' as *;
+
+.nav{
+    padding: 1rem;
+    background-color: $graphite;
+    height: 12rem;
+    position: relative;
+    @include tablet{
+        padding: 2rem 2rem 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    @include desktop{      
+        padding: 3rem 7rem;
+    }
+    &__logo{
+        height: 2rem;
+        display: block;
+        margin: 0 auto;
+        @include tablet{
+            height: 1.5rem;
+        }
+        @include desktop{
+            height: 2rem;
+        }
+    }
+    &__list{
+        margin-top: 1.5rem;
+        gap: 1rem;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        @include tablet{
+            margin-top: 0;
+        }
+        @include desktop {
+            margin-top: 0;
+        }
+    }
+    &__item{
+        text-align: center;
+        @include mobile-labels;
+        width: 100%;
+        @include desktop{
+            @include sub-header
+        }
+    }
+    &__link{
+        color: $slate;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: .75rem 0;
+        @include tablet{
+            padding: 0 0.75rem;
+
+        }
+    }
+    .active{
+        color: $white;
+        background-color: $black;
+        border-radius: 50px;
+    }
+}
