@@ -25,7 +25,7 @@ const EditInventoryItem = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(api_url + "/inventories");
+        const response = await axios.get(`${api_url}/inventories`);
         setInventoryData(response.data);
       } catch (error) {
         console.error(error);
