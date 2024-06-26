@@ -14,7 +14,8 @@ async function getWarehouses() {
 }
 
 function useWarehouses() {
-  const [warehouses, setWarehouses] = useState(null);
+  const [warehouses, setWarehouses] = useState(null); 
+  
 
   useEffect(() => {
     getWarehouses().then((warehouses) => {
