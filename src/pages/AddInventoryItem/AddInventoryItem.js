@@ -16,11 +16,12 @@ const AddInventoryItem = () => {
   const [formErrors, setFormErrors] = useState("");
   const [visible, setVisible] = useState(true)
   const navigate = useNavigate();
+  const api_url = process.env.REACT_APP_API_URL;
   
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/inventories");
+        const response = await axios.get(`${api_url}/inventories`);
         setInventoryData(response.data);
       } catch (error) {
         console.error(error);
@@ -102,7 +103,7 @@ const AddInventoryItem = () => {
       } 
       const post = async ()=>{
         try{
-            await axios.post("http://localhost:8080/inventories", item);
+            await axios.post(`${api_url}/inventories`, item);
             navigate("/inventory");
         }catch(err){
             console.log(`Err:${err}`)

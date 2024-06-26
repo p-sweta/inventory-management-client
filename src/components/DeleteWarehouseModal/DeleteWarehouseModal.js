@@ -3,10 +3,10 @@ import closeXIcon from "../../assets/icons/close-24px.svg";
 import "../DeleteWarehouseModal/DeleteWarehouseModal.scss";
 
 const DeleteWarehouseModal = ({ id, name, onClose }) => {
-
+  const api_url = process.env.REACT_APP_API_URL;
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/warehouses/${id}`);
+      const response = await axios.delete(`${api_url}/warehouses/${id}`);
       console.log(response);
       setTimeout(function () {
         window.location.href = "/";

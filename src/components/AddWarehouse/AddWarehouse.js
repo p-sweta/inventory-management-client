@@ -18,6 +18,7 @@ const AddWarehouse = () => {
   const [email, setEmail] = useState("");
   const [formErrors, setFormErrors] = useState("");
   const navigate = useNavigate();
+  const api_url = process.env.REACT_APP_API_URL;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -64,7 +65,7 @@ const AddWarehouse = () => {
 
         const postWarehouse = async()=>{
           try{
-            axios.post("http://localhost:8080/warehouses", newWarehouse);
+            axios.post(`${api_url}/warehouses`, newWarehouse);
             navigate("/");
           }catch(err){
             console.error(err)

@@ -7,12 +7,12 @@ import "./InventoryPage.scss";
 
 const InventoryPage = () => {
   const [inventoryData, setInventoryData] = useState();
-  const requestApi = "http://localhost:8080";
+  const requestApi = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(requestApi + "/inventories");
+        const response = await axios.get(`${requestApi}/inventories`);
         setInventoryData(response.data);
       } catch (error) {
         console.error(error);

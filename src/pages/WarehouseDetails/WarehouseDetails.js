@@ -9,11 +9,12 @@ import "./WarehouseDetails.scss";
 const WarehouseDetails = () => {
   const { id: warehouseId } = useParams();
   const [currentWarehouse, setCurrentWarehouse] = useState([]);
+  const api_url = process.env.REACT_APP_API_URL;
   useEffect(() => {
     const getWarehouse = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/warehouses/${warehouseId}`
+          `${api_url}/warehouses/${warehouseId}`
         );
         setCurrentWarehouse(res.data);
       } catch (err) {

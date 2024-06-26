@@ -7,7 +7,7 @@ import "./InventoryDetailsPage.scss";
 const InventoryDetailsPage = () => {
   const { id } = useParams();
   const [currInventory, setCurrInventory] = useState();
-  const api_url = "http://localhost:8080";
+  const api_url = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     const fetchInventory = async () => {

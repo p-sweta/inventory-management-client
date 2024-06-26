@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+const api_url = process.env.REACT_APP_API_URL;
+
 async function getWarehouses() {
   try {
-    const response = await axios.get("http://localhost:8080/warehouses");
+    const response = await axios.get(`${api_url}/warehouses`);
     const warehouses = response.data;
     return warehouses;
   } catch (error) {
@@ -25,7 +27,7 @@ function useWarehouses() {
 // create function to get warehouse by id to be referenced in EditForm.js
 async function getWarehouseById(id) {
   try {
-    const response = await axios.get(`http://localhost:8080/warehouses/${id}`);
+    const response = await axios.get(`${api_url}/warehouses/${id}`);
     const warehouse = response.data;
     return warehouse;
   } catch (error) {
@@ -47,7 +49,7 @@ function useWarehouseById(id) {
 
 function putFunctionToEditWarehouse(id, warehouse) {
   axios
-    .put(`http://localhost:8080/warehouses/${id}`, warehouse)
+    .put(`${api_url}/warehouses/${id}`, warehouse)
     .then((response) => {
       console.log(response);
     });
@@ -55,7 +57,7 @@ function putFunctionToEditWarehouse(id, warehouse) {
 
 function addNewWarehouse(warehouse){
   axios
-  .post('http://localhost:8080/warehouses', warehouse)
+  .post(`${api_url}/warehouses`, warehouse)
   .then((response) => {
     console.log(response)
   })

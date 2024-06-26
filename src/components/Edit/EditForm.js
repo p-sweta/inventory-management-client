@@ -15,8 +15,9 @@ const EditForm = () => {
   const [contactPosition, setContactPosition] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
+  const api_url = process.env.REACT_APP_API_URL;
 
-  const apiUrl = "http://localhost:8080/warehouses";
+  const apiUrl = `${api_url}/warehouses`;
 
   const handleSubmit = (e) => {
     e.preventDefault();

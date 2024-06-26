@@ -7,13 +7,14 @@ import chevron from "../../assets/icons/chevron_right-24px.svg";
 import edit from "../../assets/icons/edit-blue24px.svg";
 
 const WarehouseDetailsList = () => {
+  const api_url = process.env.REACT_APP_API_URL;
   const { id } = useParams();
   const [currentWarehouse, setcurrentWarehouse] = useState([]);
   useEffect(() => {
     const getWarehouse = async () => {
       try {
         const res = await axios(
-          `http://localhost:8080/warehouses/${id}/inventories`
+          `${api_url}/warehouses/${id}/inventories`
         );
         setcurrentWarehouse(res.data);
       } catch (err) {

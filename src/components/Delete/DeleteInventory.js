@@ -3,7 +3,7 @@ import closeX from "../../assets/icons/close-24px.svg";
 import "./DeleteInventory.scss";
 
 const DeleteInventory = ({ id, onClose, name }) => {
-  const requestApi = "http://localhost:8080";
+  const requestApi = process.env.REACT_APP_API_URL;
 
   const handleDelete = async (id) => {
     try {
