@@ -19,7 +19,7 @@ const InventoryPage = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [requestApi]);
 
   return (
     <div className="inventory">

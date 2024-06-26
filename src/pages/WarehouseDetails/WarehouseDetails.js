@@ -22,7 +22,7 @@ const WarehouseDetails = () => {
       }
     };
     getWarehouse();
-  }, [warehouseId]);
+  }, [api_url, warehouseId]);
 
   const {
     warehouse_name,

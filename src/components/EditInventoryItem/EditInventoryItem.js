@@ -32,7 +32,7 @@ const EditInventoryItem = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [api_url]);
 
   useEffect(() => {
     const fetchInventory = async () => {
@@ -47,7 +47,7 @@ const EditInventoryItem = () => {
     };
 
     fetchInventory();
-  }, [id]);
+  }, [api_url, id]);
 
   useEffect(() => {
     if (currInventory) {

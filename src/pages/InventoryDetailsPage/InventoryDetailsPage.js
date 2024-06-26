@@ -22,7 +22,7 @@ const InventoryDetailsPage = () => {
     };
 
     fetchInventory();
-  }, [id]);
+  }, [api_url, id]);
 
   if (!currInventory) {
     return <p>Loading...</p>;

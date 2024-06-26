@@ -2,7 +2,7 @@ import WarehouseList from "../../components/Warehouse/WarehouseList";
 import { Link } from "react-router-dom";
 import searchIcon from "../../assets/icons/search-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
-import AddWarehouse from "../../components/AddWarehouse/AddWarehouse";
+// import AddWarehouse from "../../components/AddWarehouse/AddWarehouse";
 import "../../components/Warehouse/WarehouseList.scss";
 
 const WarehousesPage = () => {

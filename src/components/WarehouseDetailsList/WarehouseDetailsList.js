@@ -22,7 +22,7 @@ const WarehouseDetailsList = () => {
       }
     };
     getWarehouse();
-  }, [id]);
+  }, [api_url, id]);
   return (
     <div className="item">
       {currentWarehouse.map((item) => {

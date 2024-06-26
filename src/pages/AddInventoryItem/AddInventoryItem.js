@@ -28,7 +28,7 @@ const AddInventoryItem = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [api_url]);
 
   let categories = [];
   let warehouses = [];
